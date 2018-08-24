@@ -10,3 +10,11 @@ test "sueldo de Baigorria y de Gimenez" {
 	gimenez.sueldo(12000)
 	assert.equals(12000, gimenez.sueldo())
 }
+
+test "Acumular sueldo gimenez en la variable al sueldosCobrados"{
+		gimenez.cobrarSueldo()
+		assert.equals(gimenez.totalCobrado(), 15000)
+		gimenez.cobrarSueldo()
+		assert.equals(gimenez.totalCobrado(), 30000)
+		
+	}

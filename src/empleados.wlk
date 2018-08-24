@@ -3,10 +3,21 @@ object gimenez {
 	// le agrega al objeto: un atributo, el método para acceder, y el método para modificar.
 //	var property sueldo = 15000
 
-	var sueldo = 215000 //modifique el sueldo para probar commit
-	method sueldo() { return 15000 }
-	method sueldo(nuevoValor) { sueldo = nuevoValor }
-}
+	var property sueldo = 15000
+	var sueldosCobrados = 0
+	
+	method cobrarSueldo(){
+	
+	sueldosCobrados = sueldosCobrados + sueldo	
+		
+	}
+	
+	method totalCobrado(){
+		
+		return sueldosCobrados
+	}
+	
+	}
 
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
@@ -17,10 +28,19 @@ object baigorria {
 	}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
+	
+	method cobrarSueldo(){
+		
+		
+	}
 }
 
 object galvan {
 	var dinero = 300000
 	method dinero() { return dinero }
-	method pagarA( empleado ) { dinero -= empleado.sueldo() }
+	method pagarA( empleado ) { dinero -= empleado.sueldo()
+		   empleado.cobrarSueldo()
+		   
+	}
+	
 }
