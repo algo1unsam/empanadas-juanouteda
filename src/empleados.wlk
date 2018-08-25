@@ -22,15 +22,37 @@ object gimenez {
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
+	var sueldoAcumuladoBaigorria = 15000
+	var dinero = 0
+	var deuda = 0
 	
 	method venderEmpanada() {
 		cantidadEmpanadasVendidas += 1
 	}
  	
-	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
+	method sueldo() {
+		dinero = cantidadEmpanadasVendidas * montoPorEmpanada
+		
+	}
 	
 	method cobrarSueldo(){
 		
+		sueldoAcumuladoBaigorria = sueldoAcumuladoBaigorria + dinero
+		
+	}
+	
+	method gastar(unMonto){
+		
+		sueldoAcumuladoBaigorria -= unMonto
+		
+	}
+	
+	method totalDeuda(){
+		
+		if (sueldoAcumuladoBaigorria < 0) { 
+		deuda = sueldoAcumuladoBaigorria  
+		return deuda}
+		else  return "No tengo Deuda"
 		
 	}
 }
