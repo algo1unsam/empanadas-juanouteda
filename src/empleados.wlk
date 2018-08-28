@@ -20,41 +20,36 @@ object gimenez {
 	}
 
 object baigorria {
-	var cantidadEmpanadasVendidas = 100
+	var cantidadEmpanadasVendidas = 1000
 	var montoPorEmpanada = 15
 	var sueldoAcumuladoBaigorria = 15000
 	var dinero = 0
 	var deuda = 0
 	
-	method venderEmpanada() {
-		cantidadEmpanadasVendidas += 1
-	}
+	method venderEmpanada() {cantidadEmpanadasVendidas += 1}
  	
-	method sueldo() {
-		dinero = cantidadEmpanadasVendidas * montoPorEmpanada
+	method sueldo() {return cantidadEmpanadasVendidas * montoPorEmpanada}
+	
+	method cobrarSueldo(){dinero = dinero + self.sueldo() - deuda
+			if (dinero > 0 ) {deuda = 0}
+			else { deuda = - dinero	
+				  dinero = 0}	
 		
 	}
 	
-	method cobrarSueldo(){
-		
-		sueldoAcumuladoBaigorria = sueldoAcumuladoBaigorria + dinero
-		
+	method gastar(unMonto){	deuda = deuda + unMonto - dinero
+		if (deuda > 0 ) dinero = 0 
+			else  deuda = 0
 	}
 	
-	method gastar(unMonto){
+	method totalDeuda(){return deuda}
 		
-		sueldoAcumuladoBaigorria -= unMonto
-		
-	}
+	method totalDinero(){return dinero}
 	
-	method totalDeuda(){
+	method cubrirGasto(){deuda = deuda - dinero}
 		
-		if (sueldoAcumuladoBaigorria < 0) { 
-		deuda = sueldoAcumuladoBaigorria  
-		return deuda}
-		else  return "No tengo Deuda"
 		
-	}
+	
 }
 
 object galvan {
