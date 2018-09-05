@@ -21,7 +21,7 @@ test "Acumular sueldo gimenez en la variable al sueldosCobrados"{
 
 test "Baigorria arranca con 15000 de sueldo, deuda en 0, dinero en 0."{
 	assert.equals(15000, baigorria.sueldo())
-		
+	// falta testear que la deuda y el dinero esten efectivamente en 0 		
 }
 	
 test "Baigorria gasta 4000, totalDeuda() debe ser 4000, totalDinero() debe ser 0."{
